@@ -3,45 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package morse;
-
+//package morse;
 /**
  *
  * @author Utilisateur
  */
 public class Morse {
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
         char firstChar = Pep8.chari();
-        
         while(firstChar != '$'){
             toLetters(firstChar);
             firstChar = Pep8.chari();
         }
     }
-    
     public static void toLetters(char thisChar){
-        
         // si c'est un « - »
         if(thisChar == '-'){
-            
             // on verifie le charactère suivant  
             thisChar = Pep8.chari();
-            
             // si c'est « - » on traduit par la lettre « t »
             if(thisChar == ' '){
                 System.out.print("t");
             }
-            
             // si c'est un « -* » on traduit par la lettre « t » et un retour de ligne
             else if(thisChar == '\n'){
                 System.out.println("t");
             }
-            
             else if(thisChar == '$'){
                 System.out.println("t");
                 Pep8.stop();
@@ -51,17 +41,14 @@ public class Morse {
             else if(thisChar == '-'){
                 // on verifie le charactère suivant  
                 thisChar = Pep8.chari();
-                
                 // si c'est « -- » on traduit par la lettre « m »
                 if(thisChar == ' ') {
                     System.out.print("m");
                 }
-                
                 // si c'est « --* » on traduit par la lettre « m » et un retour de ligne 
                 else if(thisChar == '\n'){
                     System.out.println("m");
                 }
-                
                 else if(thisChar == '$'){
                     System.out.println("m");
                     Pep8.stop();
@@ -71,15 +58,12 @@ public class Morse {
                 else if(thisChar == '-'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("o");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("o");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("o");
                         Pep8.stop();
@@ -88,50 +72,39 @@ public class Morse {
                     // ---- 
                     // cas 1: la chaine de characteres n'existe pas
                     else if(thisChar == '-'){
-                        
                         while(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
-                            
                             if(thisChar != '.' && thisChar != '-'){
-
                                     System.out.println("----*ERROR");
                                     Pep8.stop();
                             }
                             thisChar = Pep8.chari(); 
                         }
-                        
                         if(thisChar == '$'){
                             System.out.println("?"); 
                             Pep8.stop();
                         }
-                        
                         else if(thisChar == '\n'){
                             System.out.println("?");
                         }
                         else{
                             System.out.print("?");
                         }
-                        
                     }
                     
                     // ---.
                     // cas 1: la chaine de characteres n'existe pas
                     else if(thisChar == '.'){
-                        
                         while(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
-                            
                             if(thisChar != '.' && thisChar != '-'){
-
                                     System.out.println("---.*ERROR");
                                     Pep8.stop();
                             }
                             thisChar = Pep8.chari(); 
                         }
-                        
                         if(thisChar == '$'){
                             System.out.println("?"); 
                             Pep8.stop();
                         }
-                        
                         else if(thisChar == '\n'){
                             System.out.println("?");
                         }
@@ -139,7 +112,6 @@ public class Morse {
                             System.out.print("?");
                         } 
                     }
-                    
                     else{
                         System.out.println("---ERROR");
                         Pep8.stop();
@@ -150,15 +122,12 @@ public class Morse {
                 else if(thisChar == '.'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("g");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("g");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("g");
                         Pep8.stop();
@@ -169,13 +138,10 @@ public class Morse {
                     else if(thisChar == '-'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("--.-*ERROR");
@@ -183,7 +149,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -192,7 +157,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -213,13 +177,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("--..*ERROR");
@@ -227,7 +188,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -236,7 +196,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -251,36 +210,30 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println("--.ERROR");
                         Pep8.stop();
                     }
                 }
-                
                 // --ERROR
                 else{
                     System.out.println("--ERROR");
                     Pep8.stop();
                 } 
-                
             }
             
             // si c'est un « -. »
             else if(thisChar == '.'){
                 // on verifie le charactère suivant
                 thisChar = Pep8.chari();
-                
                 // si c'est « -. » on traduit par la lettre « n »
                 if(thisChar == ' '){
                    System.out.print("n"); 
                 }
-                
                 // si c'est « -.* » par la lettre « n » et un retour de ligne 
                 else if(thisChar == '\n'){
                    System.out.println("n"); 
                 }
-                
                 else if(thisChar == '$'){
                     System.out.println("n");
                     Pep8.stop();
@@ -290,15 +243,12 @@ public class Morse {
                 else if(thisChar == '-'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("k");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("k");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("k");
                         Pep8.stop();
@@ -309,13 +259,10 @@ public class Morse {
                     else if(thisChar == '-'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("-.--*ERROR");
@@ -323,7 +270,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -353,13 +299,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("-.-.*ERROR");
@@ -367,7 +310,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -376,7 +318,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -391,26 +332,22 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println("-.-ERROR");
                         Pep8.stop();
                     }
-                    
                 }
+                
                 // si c'est un « -.. »
                 else if(thisChar == '.'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("d");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("d");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("d");
                         Pep8.stop();
@@ -421,13 +358,10 @@ public class Morse {
                     else if(thisChar == '-'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("-..-*ERROR");
@@ -435,7 +369,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -444,18 +377,17 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
-                              System.out.print("n");  
+                              System.out.print("x");  
                             }
                             else if(thisChar == '$'){
-                                System.out.println("n"); 
+                                System.out.println("x"); 
                                 Pep8.stop();
                             }
                             else{
-                              System.out.println("n");  
+                              System.out.println("x");  
                             }
                         }
                     }
@@ -465,13 +397,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("-...*ERROR");
@@ -479,7 +408,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -488,37 +416,31 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
-                              System.out.print("n");  
+                              System.out.print("b");  
                             }
                             else if(thisChar == '$'){
-                                System.out.println("n"); 
+                                System.out.println("b"); 
                                 Pep8.stop();
                             }
                             else{
-                              System.out.println("n");  
+                              System.out.println("b");  
                             }
                         }
                     }
-                    
                     else{
                         System.out.println("-..ERROR");
                         Pep8.stop();
                     }
-                    
                 }
-                
                 // si c'est un « -.ERROR »
                 else{
                     System.out.println("-.ERROR");
                     Pep8.stop();
                 }
-                
             }
-            
             // si c'est un « -ERROR »
             else{
                 System.out.println("-ERROR");
@@ -528,20 +450,16 @@ public class Morse {
         
         // si c'est un « . »
         else if (thisChar == '.'){
-            
             // on verifie le charactere suivant 
             thisChar = Pep8.chari();
-            
             // si c'est un « . »
             if(thisChar == ' '){
                 System.out.print("e");  
             }
-            
             // // si c'est un « .* » 
             else if(thisChar == '\n'){
                 System.out.println("e");  
             }
-            
             else if(thisChar == '$'){
                 System.out.println("e");
                 Pep8.stop();
@@ -551,36 +469,29 @@ public class Morse {
             else if (thisChar == '-'){
                 // on verifie le charactere suivant  
                 thisChar = Pep8.chari();
-                
                 // si c'est « .- »
                 if(thisChar == ' '){
                    System.out.print("a"); 
                 }
-                
                 // si c'est « .-* »
                 else if(thisChar == '\n'){
                     System.out.println("a"); 
                 } 
-                
                 else if(thisChar == '$'){
                     System.out.println("e");
                     Pep8.stop();
                 }
                 
-                
                 // si c'est « .-- »
                 else if(thisChar == '-'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("w");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("w");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("w");
                         Pep8.stop();
@@ -591,13 +502,10 @@ public class Morse {
                     else if(thisChar == '-'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println(".---*ERROR");
@@ -605,7 +513,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -614,7 +521,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -635,13 +541,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println(".--.*ERROR");
@@ -649,7 +552,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -658,7 +560,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -673,27 +574,22 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println(".--ERROR");
                         Pep8.stop();
                     }
-
                 }
                 
                 // si c'est « .-. »
                 else if(thisChar == '.'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("r");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("r");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("r");
                         Pep8.stop();
@@ -702,29 +598,23 @@ public class Morse {
                     // .-.-
                     // cas 1: la chaine de characteres n'existe pas
                     else if(thisChar == '-'){
-                        
                         while(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
-                            
                             if(thisChar != '.' && thisChar != '-'){
-
                                     System.out.println(".-.-*ERROR");
                                     Pep8.stop();
                             }
                             thisChar = Pep8.chari(); 
                         }
-                        
                         if(thisChar == '$'){
                             System.out.println("?"); 
                             Pep8.stop();
                         }
-                        
                         else if(thisChar == '\n'){
                             System.out.println("?");
                         }
                         else{
                             System.out.print("?");
                         }
-                        
                     }
                     
                     // .-..
@@ -732,13 +622,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println(".-..*ERROR");
@@ -746,7 +633,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -755,7 +641,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -770,13 +655,11 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println(".-.ERROR");
                         Pep8.stop();
                     }
                 }
-                
                 else{
                     System.out.println(".-ERROR");
                     Pep8.stop();
@@ -787,17 +670,14 @@ public class Morse {
             else if (thisChar == '.'){
                 // on verifie le charactere suivant 
                 thisChar = Pep8.chari();
-                
                 // si c'est « .. »
                 if(thisChar == ' '){
                    System.out.print("i"); 
                 }
-                
                 // si c'est « ..* »
                 else if(thisChar == '\n'){
                    System.out.println("i"); 
                 }
-                
                 else if(thisChar == '$'){
                     System.out.println("i");
                     Pep8.stop();
@@ -807,15 +687,12 @@ public class Morse {
                 else if(thisChar == '-'){
                    // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("u");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("u");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("u");
                         Pep8.stop();
@@ -824,29 +701,23 @@ public class Morse {
                     // ..--
                     // cas 1: la chaine de characteres n'existe pas
                     else if(thisChar == '-'){
-                        
                         while(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
-                            
                             if(thisChar != '.' && thisChar != '-'){
-
                                     System.out.println("..--*ERROR");
                                     Pep8.stop();
                             }
                             thisChar = Pep8.chari(); 
                         }
-                        
                         if(thisChar == '$'){
                             System.out.println("?"); 
                             Pep8.stop();
                         }
-                        
                         else if(thisChar == '\n'){
                             System.out.println("?");
                         }
                         else{
                             System.out.print("?");
                         }
-                        
                     }
                     
                     // ..-.
@@ -854,13 +725,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("..-.*ERROR");
@@ -868,7 +736,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -877,7 +744,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -892,27 +758,22 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println("..-ERROR");
                         Pep8.stop();
                     } 
-                    
                 }
                 
                 // si c'est « ... »
                 else if(thisChar == '.'){
                     // on verifie le charactere suivant 
                     thisChar = Pep8.chari();
-                    
                     if(thisChar == ' '){
                         System.out.print("s");
                     }
-                    
                     else if(thisChar == '\n'){
                         System.out.println("s");
                     }
-                    
                     else if(thisChar == '$'){
                         System.out.println("s");
                         Pep8.stop();
@@ -923,13 +784,10 @@ public class Morse {
                     else if(thisChar == '-'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("...-*ERROR");
@@ -937,7 +795,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -946,7 +803,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -968,13 +824,10 @@ public class Morse {
                     else if(thisChar == '.'){
                         // on verifie le prochain charactere 
                         thisChar = Pep8.chari();
-                        
                         // dans le cas ou le prochain charactere est illegal 
                         if(thisChar != ' ' && thisChar != '\n' && thisChar != '$'){
                             //thisChar = Pep8.chari();
-
                             while(thisChar != ' ' && thisChar != '\n' && thisChar !='$'){
-                                
                                 // si le charactere n'est pas un . ou un -, on a une erreur et le programme s'arrete 
                                 if(thisChar != '.' && thisChar != '-'){
                                         System.out.println("....*ERROR");
@@ -982,7 +835,6 @@ public class Morse {
                                 }
                                 thisChar = Pep8.chari(); 
                             }
-                            
                             if(thisChar == '$'){
                                 System.out.println("?");
                                 Pep8.stop();
@@ -991,7 +843,6 @@ public class Morse {
                                 System.out.println("?");
                             }
                         }
-                        
                         // dans le cas ou le prochain charactere est legale 
                         else{
                             if (thisChar == ' '){
@@ -1006,19 +857,16 @@ public class Morse {
                             }
                         }
                     }
-                    
                     else{
                         System.out.println("...ERROR");
                         Pep8.stop();
                     }
                 }
-
                 else{
                     System.out.println("..ERROR");
                     Pep8.stop();
                 }
             }
-            
             // si c'est une erreur .ERROR
             else{
                 System.out.println(".ERROR");
@@ -1049,4 +897,3 @@ public class Morse {
         } 
     }
 }
- 
